@@ -149,4 +149,10 @@ function articleMaker(article){
     // closeButton.classList.toggle('hide-btn');
     // panelContent.classList.toggle('toggle-on');
   });
+
+  return articleDiv;
 }
+
+data.forEach( articleObj =>{
+  document.querySelector('.articles').appendChild(articleMaker(articleObj));
+});
