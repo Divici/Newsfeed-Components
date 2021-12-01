@@ -114,3 +114,70 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+function articleMaker(article){
+  const articleDiv = document.createElement('div');
+  const title = document.createElement('h2');
+  const date = document.createElement('p');
+  const para1 = document.createElement('p');
+  const para2 = document.createElement('p');
+  const para3 = document.createElement('p');
+  const expandButton = document.createElement('span');
+
+  articleDiv.appendChild(title);
+  articleDiv.appendChild(date);
+  articleDiv.appendChild(para1);
+  articleDiv.appendChild(para2);
+  articleDiv.appendChild(para3);
+  articleDiv.appendChild(expandButton);
+
+  title.textContent = article['title'];
+  date.textContent = article['date'];
+  para1.textContent = article['firstParagraph'];
+  para2.textContent = article['secondParagraph'];
+  para3.textContent = article['thirdParagraph'];
+  expandButton.textContent = '+';
+
+  articleDiv.classList.add('article');
+  date.classList.add('date');
+  expandButton.classList.add('expandButton');
+
+  expandButton.addEventListener('click', event =>{
+    //come back to this
+    articleDiv.classList.toggle('article-open');
+    // openButton.classList.toggle('hide-btn');
+    // closeButton.classList.toggle('hide-btn');
+    // panelContent.classList.toggle('toggle-on');
+  });
+
+  return articleDiv;
+}
+
+data.push({
+  title: "SA2: City Escape Lyrics",
+  date: 'Dec 1st, 2021',
+  firstParagraph: `Rolling around at the speed of sound
+  Got places to go
+  Gotta follow my rainbow
+  Can't stick around, have to keep movin' on
+  Guess what lies ahead
+  Only one way to find out `,
+
+  secondParagraph: `Must keep on movin' ahead
+  No time for guessin', follow my plan instead
+  Trusting in what you can't see
+  Take my lead, I'll set you free `,
+
+  thirdParagraph: `Follow me, set me free
+  Trust me and we will escape from the city
+  I'll make it through, follow me
+  Follow me, set me free
+  Trust me and we will escape from the city
+  I'll make it through, prove it to you
+  Follow me!
+  Oh yeah!`
+})
+
+data.forEach( articleObj =>{
+  document.querySelector('.articles').appendChild(articleMaker(articleObj));
+});
