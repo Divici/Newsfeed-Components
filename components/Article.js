@@ -134,4 +134,9 @@ function articleMaker(article){
   para2.textContent = article['secondParagraph'];
   para3.textContent = article['thirdParagraph'];
   expandButton.textContent = '+';
+
+  expandButton.addEventListener('click', event =>{
+    //come back to this
+  });
+  // May need to append everything in the div
 }
