@@ -124,9 +124,12 @@ function articleMaker(article){
   const para3 = document.createElement('p');
   const expandButton = document.createElement('span');
 
-  articleDiv.classList.add('article');
-  date.classList.add('date');
-  expandButton.classList.add('expandButton');
+  articleDiv.appendChild(title);
+  articleDiv.appendChild(date);
+  articleDiv.appendChild(para1);
+  articleDiv.appendChild(para2);
+  articleDiv.appendChild(para3);
+  articleDiv.appendChild(expandButton);
 
   title.textContent = article['title'];
   date.textContent = article['date'];
@@ -135,8 +138,15 @@ function articleMaker(article){
   para3.textContent = article['thirdParagraph'];
   expandButton.textContent = '+';
 
+  articleDiv.classList.add('article');
+  date.classList.add('date');
+  expandButton.classList.add('expandButton');
+
   expandButton.addEventListener('click', event =>{
     //come back to this
+    articleDiv.classList.toggle('article-open');
+    // openButton.classList.toggle('hide-btn');
+    // closeButton.classList.toggle('hide-btn');
+    // panelContent.classList.toggle('toggle-on');
   });
-  // May need to append everything in the div
 }
