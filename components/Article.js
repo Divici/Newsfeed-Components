@@ -153,6 +153,31 @@ function articleMaker(article){
   return articleDiv;
 }
 
+data.push({
+  title: "SA2: City Escape Lyrics",
+  date: 'Dec 1st, 2021',
+  firstParagraph: `Rolling around at the speed of sound
+  Got places to go
+  Gotta follow my rainbow
+  Can't stick around, have to keep movin' on
+  Guess what lies ahead
+  Only one way to find out `,
+
+  secondParagraph: `Must keep on movin' ahead
+  No time for guessin', follow my plan instead
+  Trusting in what you can't see
+  Take my lead, I'll set you free `,
+
+  thirdParagraph: `Follow me, set me free
+  Trust me and we will escape from the city
+  I'll make it through, follow me
+  Follow me, set me free
+  Trust me and we will escape from the city
+  I'll make it through, prove it to you
+  Follow me!
+  Oh yeah!`
+})
+
 data.forEach( articleObj =>{
   document.querySelector('.articles').appendChild(articleMaker(articleObj));
 });
